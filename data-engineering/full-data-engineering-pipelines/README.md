@@ -2,21 +2,7 @@
 
 ## Real-Time Layer
 
-::: mermaid
-graph LR;
-
-    producers--->Kinesis_Data_Streams
-    producers2-->Kinesis_Data_Firehose
-    Kinesis_Data_Firehose-->KinesisDataStreams
-    Kinesis_Data_Firehose--Parquet-->Amazon_S3
-    KinesisDataStreams--> Lambda
-    KinesisDataStreams-->KinesisDataAnalytics
-    KinesisDataStreams--> KinesisDataFirehose
-    KinesisDataAnalytics-->EC2
-    EC2-- REAL-TIME ML -->SageMaker
-    KinesisDataFirehose--ORC-->S3--LOAD-->Redshift
-    KinesisDataFirehose--JSON-->ElasticsearchService
-:::
+![image info](../images/real-time-layer.png)
 
 ## Video Layer
 
@@ -50,4 +36,4 @@ graph LR;
 :::
 
 ----
- ![image info](../images/full_pipeline_real_time.png)
+ 
